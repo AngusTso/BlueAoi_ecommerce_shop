@@ -3,11 +3,9 @@ import site from "../data/site.json";
 import styles from "./Carousel.module.css";
 
 /**
- * Hero banner carousel (lightweight fade slider — no external lib).
- * Drop banner images into public/ named Banner1.* (also tries banner1,
- * and .jpeg/.jpg/.png). Missing files are skipped and until any banner
- * exists a pretty lace hero card is shown instead — the page never looks
- * broken or empty.
+ * Hero banner carousel (lightweight fade slider).
+ * Banners resolve from public/ as Banner1–3 (.jpeg/.jpg/.png);
+ * when none exist a lace hero card is shown instead.
  */
 const BANNER_SLOTS = [
   ["Banner1", "banner1"],

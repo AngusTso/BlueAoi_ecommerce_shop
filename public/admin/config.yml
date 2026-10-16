@@ -1,12 +1,9 @@
 # ============================================================
-#  Decap CMS config — this is your sister's admin panel.
+#  Decap CMS — content manager for the Blue Aoi shop.
 #  Live at:  https://blueaoi-handmade.netlify.app/admin/
 # ============================================================
 backend:
-  # git-gateway = login with the email invite + password only.
-  # No GitHub account needed for the shop owner — Netlify commits for her.
-  # Requires on Netlify: Identity → Enable, and
-  # Identity → Services → Git Gateway → Enable.
+  # Email + password login via Netlify Identity (no GitHub account needed).
   name: git-gateway
   # Must match the branch you push to (GitHub default is "main")
   branch: main
@@ -130,6 +127,5 @@ collections:
               widget: text,
               required: false,
             }
-          # NOTE: the WhatsApp number is intentionally NOT stored here —
-          # it lives in the VITE_WHATSAPP_NUMBER environment variable so it
-          # never gets committed to this repository.
+          # NOTE: the WhatsApp number is intentionally not stored here —
+          # it is injected via the VITE_WHATSAPP_NUMBER environment variable.

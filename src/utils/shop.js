@@ -1,13 +1,9 @@
 /**
  * Shop helpers — pricing + WhatsApp order links.
  *
- * The WhatsApp number is read from an environment variable so it is
- * NEVER committed to the repository:
- *   - local dev:   put VITE_WHATSAPP_NUMBER=852XXXXXXXX in .env.local
- *   - production:  set the same variable in Netlify → Site settings →
- *                  Environment variables
- * If the number is not configured yet, links come back empty and the UI
- * gracefully falls back to Instagram.
+ * The WhatsApp number is injected at build time via VITE_WHATSAPP_NUMBER
+ * and is never committed to the repository. When unset, the links come
+ * back empty and the UI falls back to Instagram.
  */
 export const WHATSAPP_NUMBER = (import.meta.env.VITE_WHATSAPP_NUMBER || "").replace(
   /\D/g,
