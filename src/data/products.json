@@ -3,9 +3,11 @@
     {
       "id": "B01",
       "name": "Baby Blue Bloom Bracelet",
-      "price": 120,
+      "price": 70,
       "description": "A soft baby blue bracelet hand-strung with delicate beads — light, airy and perfect for everyday wear or gifting.",
-      "images": ["/Picsart_24-07-29_12-04-35-508_20250219_014321_0000.jpg"],
+      "images": [
+        "/Picsart_24-07-29_12-04-35-508_20250219_014321_0000.jpg"
+      ],
       "status": "available",
       "newArrival": true
     },
@@ -14,7 +16,9 @@
       "name": "Powder Blue Ribbon Bracelet",
       "price": 120,
       "description": "Handmade with powder blue threads and a tiny bow detail — a signature Blue Aoi piece.",
-      "images": ["/Picsart_24-07-29_12-24-46-589_20250219_014327_0000.jpg"],
+      "images": [
+        "/Picsart_24-07-29_12-24-46-589_20250219_014327_0000.jpg"
+      ],
       "status": "available",
       "newArrival": true
     },
