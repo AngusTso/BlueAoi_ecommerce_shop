@@ -84,7 +84,7 @@ URL — no local setup needed.
 
 ## 🚀 Deployment (one-time setup, in this order)
 
-### 1. Push to a private GitHub repo
+### 1. Push the project to GitHub
 
 One-time git identity (skip if you've committed before — commits fail without it):
 
@@ -93,16 +93,28 @@ git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
 
-Create a **private** repo on GitHub (no files), then push this project:
+Check that `origin` points to your GitHub repository, then push the `main`
+branch:
 
 ```bash
-git init
+git remote -v
 git add .
-git commit -m "Blue Aoi shop"
-git branch -M main
-git remote add origin <your-private-repo-url>
+git commit -m "Describe your change"
 git push -u origin main
 ```
+
+If `origin` is already configured, do not run `git remote add origin` again.
+If its URL is wrong, update it with `git remote set-url origin <repo-url>`.
+
+If Git reports that the local and remote histories are unrelated, preserve both
+by fetching and merging the existing GitHub `main` branch:
+
+```bash
+git fetch origin
+git merge --allow-unrelated-histories origin/main
+```
+
+Resolve any conflicts, commit the merge, then push.
 
 > The repo can stay **private** — Netlify and Decap both work with private
 > repos, and it keeps everything (including her number, if it ever leaks into
