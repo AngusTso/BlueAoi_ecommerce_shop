@@ -23,17 +23,18 @@ styled with soft blues and lace, deployed on **Netlify**, and managed with
 
 ## 🖼️ Banners (drop-in, do it yourself later)
 
-Put your banner photos in the `public/` folder using these exact names:
+Put your banner photos in the `public/` folder using these names:
 
 ```
-public/banner1.png
-public/banner2.png
-public/banner3.png
+public/Banner1.jpeg      (also accepts banner1.jpeg / .jpg / .png)
+public/Banner2.jpeg
+public/Banner3.jpeg
 ```
 
 They appear in the home page carousel automatically (wide images work best —
-roughly 1600×700 px). Any missing file is simply skipped, and until all banners
-are added a pretty lace hero card is shown instead. No code changes needed.
+roughly 1890×945 px, i.e. 2:1). Any missing file is simply skipped, and until
+all banners are added a pretty lace hero card is shown instead. No code changes
+needed — to swap a banner later, just replace the file with the same name.
 
 ## 🧑‍💻 Local development
 

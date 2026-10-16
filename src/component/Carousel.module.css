@@ -1,16 +1,58 @@
-.container {
+/* ---- banner fade slider ---- */
+.heroBox {
+  position: relative;
   width: min(1100px, 94%);
   margin: 0 auto;
+  height: clamp(240px, 42vw, 460px);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--card-shadow);
+  background-color: var(--bg-soft);
 }
 
-.slide img {
-  display: block;
+.slide {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: clamp(240px, 42vw, 460px);
+  height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.slideActive {
+  opacity: 1;
+}
+
+.dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  z-index: 2;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--white);
+  background-color: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dotActive {
+  background-color: var(--white);
+  transform: scale(1.2);
 }
 
 /* built-in hero shown until banner1/2/3.png are added */
