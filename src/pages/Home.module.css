@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.carouselContainer {
+  padding-top: 1.5rem;
+}
+
+.newArrival {
+  padding-bottom: 1rem;
+}
+
+/* white lace band between sections */
+.laceSpacer {
+  margin-top: 1rem;
+}
+
+.laceBand {
+  text-align: center;
+  color: var(--blue);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.follow {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.igButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  background-color: var(--navy);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.igButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+  color: var(--white);
+}
+
+.igButton img {
+  width: 1.6rem;
+  height: 1.6rem;
+}

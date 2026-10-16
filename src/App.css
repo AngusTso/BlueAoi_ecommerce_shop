@@ -1,0 +1,175 @@
+/* ============================================================
+   Blue Aoi design tokens — girly cute blue + lace
+   Palette sampled from the logo (navy ink on soft blush/blue)
+   ============================================================ */
+:root {
+  --bg: #eff6fd; /* soft baby blue page background */
+  --bg-soft: #e3eefb; /* slightly deeper blue for bands */
+  --white: #ffffff;
+  --navy: #1f3a73; /* logo ink — headings & primary */
+  --blue: #4a73b8; /* mid blue — links & accents */
+  --blue-soft: #a8cbea; /* powder blue — lace lines */
+  --pink-hint: #f7dce4; /* tiny bow/blush accents only */
+  --ink: #33405f; /* body text */
+  --ink-soft: #7b87a8; /* muted text */
+  --card-shadow: 0 6px 20px rgba(31, 58, 115, 0.1);
+  --card-shadow-hover: 0 12px 28px rgba(31, 58, 115, 0.18);
+  --radius: 1.25rem;
+  --radius-sm: 0.75rem;
+  --font-script: "Parisienne", cursive;
+  --font-body: "Quicksand", "Segoe UI", sans-serif;
+
+  /* Elegant tablecloth lace: diamond net ground + floral medallions
+     with corner rosettes (seamless 100×100 tile) */
+  --lace-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23a8cbea' stroke-width='0.8' stroke-opacity='0.6'%3E%3Cpath d='M0 75L25 100M0 50L50 100M0 25L75 100M0 0L100 100M25 0L100 75M50 0L100 50M75 0L100 25'/%3E%3Cpath d='M0 25L25 0M0 50L50 0M0 75L75 0M0 100L100 0M25 100L100 25M50 100L100 50M75 100L100 75'/%3E%3Cellipse cx='50' cy='29' rx='4.5' ry='12'/%3E%3Cellipse cx='50' cy='29' rx='4.5' ry='12' transform='rotate(45 50 50)'/%3E%3Cellipse cx='50' cy='29' rx='4.5' ry='12' transform='rotate(90 50 50)'/%3E%3Cellipse cx='50' cy='29' rx='4.5' ry='12' transform='rotate(135 50 50)'/%3E%3Cellipse cx='50' cy='29' rx='4.5' ry='12' transform='rotate(180 50 50)'/%3E%3Cellipse cx='50' cy='29' rx='4.5' ry='12' transform='rotate(225 50 50)'/%3E%3Cellipse cx='50' cy='29' rx='4.5' ry='12' transform='rotate(270 50 50)'/%3E%3Cellipse cx='50' cy='29' rx='4.5' ry='12' transform='rotate(315 50 50)'/%3E%3Ccircle cx='50' cy='50' r='9'/%3E%3Cellipse cx='0' cy='-13' rx='3' ry='7'/%3E%3Cellipse cx='0' cy='-13' rx='3' ry='7' transform='rotate(90)'/%3E%3Cellipse cx='0' cy='-13' rx='3' ry='7' transform='rotate(180)'/%3E%3Cellipse cx='0' cy='-13' rx='3' ry='7' transform='rotate(270)'/%3E%3Cellipse cx='100' cy='-13' rx='3' ry='7' transform='rotate(90 100 0)'/%3E%3Cellipse cx='100' cy='-13' rx='3' ry='7' transform='rotate(180 100 0)'/%3E%3Cellipse cx='100' cy='-13' rx='3' ry='7' transform='rotate(270 100 0)'/%3E%3Cellipse cx='100' cy='-13' rx='3' ry='7'/%3E%3Cellipse cx='0' cy='87' rx='3' ry='7' transform='rotate(90 0 100)'/%3E%3Cellipse cx='0' cy='87' rx='3' ry='7' transform='rotate(180 0 100)'/%3E%3Cellipse cx='0' cy='87' rx='3' ry='7' transform='rotate(270 0 100)'/%3E%3Cellipse cx='0' cy='87' rx='3' ry='7'/%3E%3Cellipse cx='100' cy='87' rx='3' ry='7' transform='rotate(90 100 100)'/%3E%3Cellipse cx='100' cy='87' rx='3' ry='7' transform='rotate(180 100 100)'/%3E%3Cellipse cx='100' cy='87' rx='3' ry='7' transform='rotate(270 100 100)'/%3E%3Cellipse cx='100' cy='87' rx='3' ry='7'/%3E%3Cg fill='%23a8cbea' stroke='none' fill-opacity='0.75'%3E%3Ccircle cx='50' cy='50' r='3'/%3E%3Ccircle cx='81' cy='63' r='1.2'/%3E%3Ccircle cx='63' cy='81' r='1.2'/%3E%3Ccircle cx='37' cy='81' r='1.2'/%3E%3Ccircle cx='19' cy='63' r='1.2'/%3E%3Ccircle cx='19' cy='37' r='1.2'/%3E%3Ccircle cx='37' cy='19' r='1.2'/%3E%3Ccircle cx='63' cy='19' r='1.2'/%3E%3Ccircle cx='81' cy='37' r='1.2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+body {
+  background-color: var(--bg);
+  background-image:
+    var(--lace-pattern),
+    linear-gradient(180deg, #f6faff 0%, #e8f2fc 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---------- typography ---------- */
+h1,
+h2,
+h3 {
+  color: var(--navy);
+}
+
+.sectionTitle {
+  font-family: var(--font-script);
+  color: var(--navy);
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  text-align: center;
+  margin: 0 0 0.5rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin: 0 0 2rem;
+}
+
+/* small bow under section titles */
+.bowDivider {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--blue);
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  border: 2px solid var(--navy);
+  background-color: var(--navy);
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+  color: var(--white);
+}
+
+.btnOutline {
+  background-color: var(--white);
+  color: var(--navy);
+}
+
+.btnOutline:hover {
+  background-color: var(--pink-hint);
+  color: var(--navy);
+}
+
+.btnWhatsapp {
+  background-color: #25d366;
+  border-color: #25d366;
+}
+
+.btnWhatsapp:hover {
+  background-color: #1eb958;
+}
+
+/* ---------- cards ---------- */
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+/* ---------- badges ---------- */
+.badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background-color: var(--pink-hint);
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}
+
+.badgeSoldOut {
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+/* price tag */
+.price {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 1.15rem;
+}
+
+/* ---------- scalloped lace edges ----------
+   half-circle bumps — place under a white section (.scallopDown)
+   or above one (.scallopUp) so it reads like a lace hem */
+.scallopDown {
+  height: 13px;
+  background: radial-gradient(circle at 13px 0, var(--white) 13px, transparent 13.5px)
+    0 0 / 26px 13px repeat-x;
+}
+
+.scallopUp {
+  height: 13px;
+  background: radial-gradient(circle at 13px 13px, var(--white) 13px, transparent 13.5px)
+    0 0 / 26px 13px repeat-x;
+}
+
+/* soft white lace band used between sections */
+.laceBand {
+  background-color: var(--white);
+  background-image: var(--lace-pattern);
+  padding: 2.5rem 1rem;
+}

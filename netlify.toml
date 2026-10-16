@@ -1,0 +1,11 @@
+# Netlify build settings for Blue Aoi
+[build]
+  command = "npm run build"
+  directory = "dist"
+
+# SPA fallback — any page route serves the React app
+# (existing files like /admin/ are served normally, no force flag)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

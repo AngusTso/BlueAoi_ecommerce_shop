@@ -1,0 +1,99 @@
+.container {
+  background-color: var(--navy);
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(168, 203, 234, 0.18) 0,
+      transparent 45%
+    ),
+    radial-gradient(circle at 80% 70%, rgba(247, 220, 228, 0.14) 0, transparent 45%);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.container ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+}
+
+.container a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.container a:hover {
+  color: var(--blue-soft);
+  text-decoration: underline;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btmLogo {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--white);
+}
+
+.brand p {
+  color: var(--blue-soft);
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.misc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.misc p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--blue-soft);
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.socials a {
+  display: inline-flex;
+  width: 2.4rem;
+  height: 2.4rem;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  transition: background-color 0.15s ease;
+}
+
+.socials a:hover {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+.socials img {
+  width: 1.2rem;
+  height: 1.2rem;
+}

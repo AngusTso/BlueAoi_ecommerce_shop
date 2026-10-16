@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": "B01",
+      "name": "Baby Blue Bloom Bracelet",
+      "price": 120,
+      "description": "A soft baby blue bracelet hand-strung with delicate beads — light, airy and perfect for everyday wear or gifting.",
+      "images": ["/Picsart_24-07-29_12-04-35-508_20250219_014321_0000.jpg"],
+      "status": "available",
+      "newArrival": true
+    },
+    {
+      "id": "B02",
+      "name": "Powder Blue Ribbon Bracelet",
+      "price": 120,
+      "description": "Handmade with powder blue threads and a tiny bow detail — a signature Blue Aoi piece.",
+      "images": ["/Picsart_24-07-29_12-24-46-589_20250219_014327_0000.jpg"],
+      "status": "available",
+      "newArrival": true
+    },
+    {
+      "id": "B03",
+      "name": "Friendship Lace Bracelet",
+      "price": 120,
+      "description": "“So make the friendship bracelets” — a sweet woven piece made to share with your favourite person.",
+      "images": [
+        "/So make the friendship bracelets Take the moment and taste it_20240714_1005_20250219_014242_0000.png"
+      ],
+      "status": "available",
+      "newArrival": true
+    },
+    {
+      "id": "B04",
+      "name": "Midnight Navy Charm Bracelet",
+      "price": 120,
+      "description": "Deep navy beads inspired by the Blue Aoi logo — elegant and easy to match.",
+      "images": [],
+      "status": "available",
+      "newArrival": false
+    },
+    {
+      "id": "B05",
+      "name": "Cloudy Day Beaded Bracelet",
+      "price": 120,
+      "description": "Soft white and blue beads strung by hand for a dreamy, gentle look.",
+      "images": [],
+      "status": "available",
+      "newArrival": false
+    },
+    {
+      "id": "B06",
+      "name": "Blue Blossom Bracelet",
+      "price": 120,
+      "description": "Floral-inspired beads in our signature blues — one of a kind, just like you.",
+      "images": [],
+      "status": "sold out",
+      "newArrival": false
+    }
+  ]
+}

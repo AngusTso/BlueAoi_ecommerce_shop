@@ -1,0 +1,83 @@
+.buyNow {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.card {
+  padding: 1.75rem 1.75rem 2rem;
+}
+
+.card h2 {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.9rem;
+  margin: 0 0 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.card strong {
+  color: var(--navy);
+}
+
+.contactRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+.contactBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.contactBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.contactBtn img {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.igBtn {
+  background-color: var(--navy);
+}
+
+.waBtn {
+  background-color: #25d366;
+}
+
+.pending {
+  background-color: var(--ink-soft);
+  cursor: default;
+}
+
+.pending:hover {
+  transform: none;
+  box-shadow: none;
+}

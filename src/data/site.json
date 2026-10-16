@@ -1,0 +1,31 @@
+{
+  "shopName": "Blue Aoi",
+  "tagline": "Handmade Bracelets & Original Design",
+  "instagramHandle": "@BlueAoi_HandmadeBracelet",
+  "instagramUrl": "https://www.instagram.com/BlueAoi_HandmadeBracelet",
+  "aboutHeroTitle": "Handmade with love, made just for you",
+  "aboutText": "Blue Aoi began in 2023 with a simple wish: to turn a little box of beads and threads into pieces of joy that people can wear every day. Every bracelet here is designed, strung and finished by hand in Hong Kong — no factories, no mass production, just one pair of careful hands and a lot of love.\nBecause each piece is made one at a time, tiny variations make every bracelet one of a kind — exactly like the person wearing it. When you wear Blue Aoi, you're wearing something that was made slowly, softly and only for you.",
+  "aboutHighlights": [
+    {
+      "icon": "🧵",
+      "title": "100% Handmade",
+      "text": "Every bracelet is designed, strung and finished by hand — never machine-made, never mass-produced."
+    },
+    {
+      "icon": "💎",
+      "title": "One of a Kind",
+      "text": "Small batches and one-of-a-kind pieces, so you won't run into your bracelet on everyone else's wrist."
+    },
+    {
+      "icon": "🎀",
+      "title": "Made with Care",
+      "text": "We hand-pick quality beads and threads so your piece stays beautiful wear after wear."
+    },
+    {
+      "icon": "💌",
+      "title": "Personal Service",
+      "text": "Need a different size, colour or gift wrapping? Chat with us on WhatsApp — you'll always talk to a real person."
+    }
+  ],
+  "shippingText": "For the shipping of your item you can choose between SF express and HK Post service.\nDepending on your country or zone, some shipping services may not be available."
+}

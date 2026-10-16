@@ -1,0 +1,108 @@
+# ============================================================
+#  Decap CMS config — this is your sister's admin panel.
+#  Live at:  https://<your-site>.netlify.app/admin/
+# ============================================================
+backend:
+  name: github
+  # ⚠️ CHANGE THIS after you push to GitHub: "your-username/blueAoiShop"
+  repo: YOUR_GITHUB_USERNAME/blueAoiShop
+  # Must match the branch you push to (GitHub default is "main")
+  branch: main
+
+# Photos added in the CMS are committed into this folder
+media_folder: "public/media/products"
+# How those photos are referenced inside the site
+public_folder: "/media/products"
+
+collections:
+  - name: products
+    label: "🛍️ Products"
+    label_singular: "Product"
+    files:
+      - name: all_products
+        label: "All Bracelets"
+        label_singular: "Product List"
+        file: "src/data/products.json"
+        fields:
+          - label: Products
+            name: products
+            widget: list
+            summary: "{{fields.id}} · {{fields.name}} · {{fields.status}}"
+            add_to_top: true
+            fields:
+              - label: Item Code
+                name: id
+                widget: string
+                hint: "e.g. B07 — shown on the card and inside the WhatsApp order message"
+                pattern: ["^[A-Za-z0-9_-]+$", "Letters, numbers, - and _ only (e.g. B07)"]
+              - label: Name
+                name: name
+                widget: string
+              - label: Price (HKD)
+                name: price
+                widget: number
+                value_type: int
+                min: 1
+                hint: "Just the number — the site displays it as HK$120"
+              - label: Description
+                name: description
+                widget: text
+                required: false
+              - label: Photos
+                name: images
+                widget: list
+                summary: "{{fields}}"
+                add_to_top: true
+                hint: "Tap a photo to upload — drag & drop or pick from your phone"
+                field:
+                  label: Photo
+                  name: image
+                  widget: image
+              - label: Status
+                name: status
+                widget: select
+                options:
+                  - { label: "In Stock", value: "available" }
+                  - { label: "Sold Out", value: "sold out" }
+                  - { label: "Hidden (don't show on site)", value: "hidden" }
+                default: available
+              - label: Show in New Arrival (home page)
+                name: newArrival
+                widget: boolean
+                default: false
+                required: false
+
+  - name: settings
+    label: "⚙️ Shop Settings"
+    files:
+      - name: general
+        label: "General"
+        file: "src/data/site.json"
+        fields:
+          - { label: Shop Name, name: shopName, widget: string }
+          - { label: Tagline, name: tagline, widget: string, required: false }
+          - { label: Instagram Handle, name: instagramHandle, widget: string, required: false }
+          - { label: Instagram URL, name: instagramUrl, widget: string, required: false }
+          - label: About — Headline
+            name: aboutHeroTitle
+            widget: string
+            required: false
+            hint: "Big script title at the top of the About page"
+          - label: About — Story
+            name: aboutText
+            widget: text
+            required: false
+            hint: "The story of the shop. Start a new paragraph with a new line."
+          - label: About — Why shop with us (cards)
+            name: aboutHighlights
+            widget: list
+            required: false
+            summary: "{{fields.icon}} {{fields.title}}"
+            fields:
+              - { label: Icon (emoji), name: icon, widget: string, required: false, hint: "e.g. 🎀" }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+          - { label: Shipping Text, name: shippingText, widget: text, required: false }
+          # NOTE: the WhatsApp number is intentionally NOT stored here —
+          # it lives in the VITE_WHATSAPP_NUMBER environment variable so it
+          # never gets committed to this repository.

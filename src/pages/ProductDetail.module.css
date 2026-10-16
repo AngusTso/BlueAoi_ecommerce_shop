@@ -1,0 +1,148 @@
+.detail {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.back {
+  display: inline-block;
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
+.back:hover {
+  color: var(--navy);
+  text-decoration: underline;
+}
+
+.content {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.gallery {
+  flex: 1 1 380px;
+  min-width: 300px;
+}
+
+.mainImage {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+
+.mainImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--bg-soft);
+  background-image: var(--lace-pattern);
+  color: var(--ink-soft);
+}
+
+.placeholder span {
+  font-size: 3rem;
+}
+
+.thumbs {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border: 2px solid var(--blue-soft);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--white);
+  cursor: pointer;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbActive {
+  border-color: var(--navy);
+}
+
+.info {
+  flex: 1 1 320px;
+  min-width: 280px;
+}
+
+.code {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
+.name {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin: 0.25rem 0 0.75rem;
+}
+
+.price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 1.25rem;
+}
+
+.desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.unavailable {
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.notes {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px dotted var(--blue-soft);
+}
+
+.notes p {
+  color: var(--ink-soft);
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.missing {
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.missing p {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
