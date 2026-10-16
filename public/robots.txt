@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# ⚠️ replace YOUR-SITE.netlify.app with your real domain
-Sitemap: https://YOUR-SITE.netlify.app/sitemap.xml
+# Sitemap for Blue Aoi — https://blueaoi-handmade.netlify.app/sitemap.xml
+Sitemap: https://blueaoi-handmade.netlify.app/sitemap.xml

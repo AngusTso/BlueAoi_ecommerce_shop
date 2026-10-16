@@ -1,6 +1,6 @@
 # ============================================================
 #  Decap CMS config — this is your sister's admin panel.
-#  Live at:  https://<your-site>.netlify.app/admin/
+#  Live at:  https://blueaoi-handmade.netlify.app/admin/
 # ============================================================
 backend:
   # git-gateway = login with the email invite + password only.
@@ -36,7 +36,11 @@ collections:
                 name: id
                 widget: string
                 hint: "e.g. B07 — shown on the card and inside the WhatsApp order message"
-                pattern: ["^[A-Za-z0-9_-]+$", "Letters, numbers, - and _ only (e.g. B07)"]
+                pattern:
+                  [
+                    "^[A-Za-z0-9_-]+$",
+                    "Letters, numbers, - and _ only (e.g. B07)",
+                  ]
               - label: Name
                 name: name
                 widget: string
@@ -83,8 +87,18 @@ collections:
         fields:
           - { label: Shop Name, name: shopName, widget: string }
           - { label: Tagline, name: tagline, widget: string, required: false }
-          - { label: Instagram Handle, name: instagramHandle, widget: string, required: false }
-          - { label: Instagram URL, name: instagramUrl, widget: string, required: false }
+          - {
+              label: Instagram Handle,
+              name: instagramHandle,
+              widget: string,
+              required: false,
+            }
+          - {
+              label: Instagram URL,
+              name: instagramUrl,
+              widget: string,
+              required: false,
+            }
           - label: About — Headline
             name: aboutHeroTitle
             widget: string
@@ -101,10 +115,21 @@ collections:
             required: false
             summary: "{{fields.icon}} {{fields.title}}"
             fields:
-              - { label: Icon (emoji), name: icon, widget: string, required: false, hint: "e.g. 🎀" }
+              - {
+                  label: Icon (emoji),
+                  name: icon,
+                  widget: string,
+                  required: false,
+                  hint: "e.g. 🎀",
+                }
               - { label: Title, name: title, widget: string }
               - { label: Text, name: text, widget: text }
-          - { label: Shipping Text, name: shippingText, widget: text, required: false }
+          - {
+              label: Shipping Text,
+              name: shippingText,
+              widget: text,
+              required: false,
+            }
           # NOTE: the WhatsApp number is intentionally NOT stored here —
           # it lives in the VITE_WHATSAPP_NUMBER environment variable so it
           # never gets committed to this repository.
