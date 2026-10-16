@@ -37,22 +37,39 @@ are added a pretty lace hero card is shown instead. No code changes needed.
 
 ## 🧑‍💻 Local development
 
+**Prerequisite:** install **Node.js LTS** from [nodejs.org](https://nodejs.org)
+(this gives you `npm`). Then:
+
 ```bash
 npm install
-npm run dev
+npm run dev          # opens http://localhost:5173
 ```
 
-Configure your **own** secrets locally (this file is git-ignored):
+### Your `.env.local` (the WhatsApp number — stays on your machine only)
 
-```bash
-cp .env.example .env.local
-# then edit .env.local:
-#   VITE_WHATSAPP_NUMBER=85261234567   <- digits only, with country code
+On **Windows PowerShell**:
+
+```powershell
+Copy-Item .env.example .env.local
+notepad .env.local
+# then set:  VITE_WHATSAPP_NUMBER=85261234567
+#            <- digits only, with country code (852 for HK), no + or spaces
 ```
+
+(macOS/Linux: `cp .env.example .env.local`)
 
 > ⚠️ The WhatsApp number is **never** written into the repository. It is read
 > from `VITE_WHATSAPP_NUMBER` at build time. If it's not set, the site
 > gracefully falls back to Instagram links.
+>
+> **Restart `npm run dev` after editing `.env.local`** — Vite only reads env
+> files when the dev server starts. You can verify it worked by opening a
+> product page: the green button should link to `wa.me/852...` instead of
+> falling back to Instagram.
+
+**Note:** the `/admin` CMS only works on the **deployed** Netlify site (it
+needs Netlify Identity, which doesn't run locally). Just test it on the live
+URL — no local setup needed.
 
 ## 🛍️ Adding products (for the shop owner)
 
@@ -65,34 +82,71 @@ cp .env.example .env.local
    - Tick **Show in New Arrival** to feature it on the home page
 4. Press **Publish** — the site rebuilds and goes live in ~1 minute
 
-## 🚀 Deployment (one-time setup)
+## 🚀 Deployment (one-time setup, in this order)
 
-1. Create a **private** GitHub repo and push this project:
-   ```bash
-   git init
-   git add .
-   git commit -m "Blue Aoi shop"
-   git branch -M main
-   git remote add origin <your-private-repo-url>
-   git push -u origin main
-   ```
-2. Go to [netlify.com](https://www.netlify.com) → *Add new site* → *Import from
-   Git* (build settings are already in `netlify.toml`)
-3. In Netlify: **Site settings → Environment variables** → add
-   `VITE_WHATSAPP_NUMBER` = `85261234567`
-4. Enable **Identity** (Site settings → Identity → Enable) →
-   *Invite users* → send the invite to your sister's email.
-   Under *Registration preferences* choose *Invite only*.
-5. Edit `public/admin/config.yml` and replace
-   `YOUR_GITHUB_USERNAME/blueAoiShop` with your real repo, then commit.
-6. Connect Netlify's GitHub integration to the repo (Identity's GitHub backend
-   commits as your account — under *Identity → Services* authorize the GitHub
-   backend if prompted).
-7. **SEO placeholders**: once your site has its final domain, replace
-   `YOUR-SITE.netlify.app` with it in three files and commit:
-   `index.html`, `public/robots.txt`, `public/sitemap.xml`.
-   (`public/og-image.jpg` is the social-share preview image — swap it for any
-   prettier photo of the bracelets, ideally 1200×630 px.)
+### 1. Push to a private GitHub repo
+
+One-time git identity (skip if you've committed before — commits fail without it):
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+Create a **private** repo on GitHub (no files), then push this project:
+
+```bash
+git init
+git add .
+git commit -m "Blue Aoi shop"
+git branch -M main
+git remote add origin <your-private-repo-url>
+git push -u origin main
+```
+
+> The repo can stay **private** — Netlify and Decap both work with private
+> repos, and it keeps everything (including her number, if it ever leaks into
+> git) off the public internet.
+
+### 2. Import into Netlify
+
+Go to [netlify.com](https://www.netlify.com) → *Add new site* → *Import from
+Git* → pick your repo. Build settings come automatically from `netlify.toml`.
+
+### 3. Add the WhatsApp number (environment variable)
+
+1. *Site settings → Environment variables → Add a variable*:
+   `VITE_WHATSAPP_NUMBER` = `85261234567` (digits only, with `852`)
+2. ⚠️ **Then trigger a fresh deploy**: *Deploy → Trigger deploy →
+   Clear cache and deploy site.* Netlify does **not** rebuild automatically
+   when you add a variable — until you do this, the site keeps building
+   without the number and WhatsApp buttons fall back to Instagram.
+
+*(Optional: custom domain under Site settings → Domain management.)*
+
+### 4. Enable Identity for your sister's login
+
+1. *Site settings → Identity →* **Enable**
+2. *Identity → Registration preferences* → **Invite only**
+3. *Identity → Services →* **Git Gateway → Enable**
+   — this is what lets her publish **without a GitHub account** (Netlify
+   commits on her behalf; the site's `config.yml` already uses `git-gateway`)
+4. *Identity →* **Invite users** → enter your sister's email →
+   she opens the link from her inbox and chooses her own password
+
+### 5. Test her admin panel
+
+Open `https://<your-site>.netlify.app/admin/`, log in with her email +
+password, edit a product, press **Publish** — the site rebuilds in ~1 minute.
+(The admin only works on the deployed site, not on local `npm run dev`.)
+
+### 6. SEO finalization
+
+Once your site has its final domain, replace `YOUR-SITE.netlify.app` with it
+in three files and commit + push:
+`index.html`, `public/robots.txt`, `public/sitemap.xml`.
+(`public/og-image.jpg` is the social-share preview image — swap it for any
+prettier photo of the bracelets, ideally 1200×630 px.)
 
 Done! `your-site.netlify.app/admin` is your sister's shop manager.
 

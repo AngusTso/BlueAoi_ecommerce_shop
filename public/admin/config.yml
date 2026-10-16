@@ -3,9 +3,11 @@
 #  Live at:  https://<your-site>.netlify.app/admin/
 # ============================================================
 backend:
-  name: github
-  # ⚠️ CHANGE THIS after you push to GitHub: "your-username/blueAoiShop"
-  repo: YOUR_GITHUB_USERNAME/blueAoiShop
+  # git-gateway = login with the email invite + password only.
+  # No GitHub account needed for the shop owner — Netlify commits for her.
+  # Requires on Netlify: Identity → Enable, and
+  # Identity → Services → Git Gateway → Enable.
+  name: git-gateway
   # Must match the branch you push to (GitHub default is "main")
   branch: main
 
